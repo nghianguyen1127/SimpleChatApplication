@@ -1,14 +1,35 @@
 {
+  "private": true,
   "name": "shopping",
   "version": "1.0.0",
   "description": "Simple Shopping Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bootstrap": "yarn add -D lerna -W && lerna bootstrap",
+    "start:api": "yarn workspace @shopping/api start",
+    "start:ui": "yarn workspace @shopping/ui start",
+    "start": "concurrently \"yarn start:api\" \"yarn start:ui\"",
+    "purge": "shx rm -rf node_modules && lerna clean --yes"
   },
   "author": "Nghia (Tony)",
   "license": "ISC",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "eslint": "^8.1.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "shx": "^0.3.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
