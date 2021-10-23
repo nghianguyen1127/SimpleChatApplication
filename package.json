@@ -24,10 +24,75 @@
   "workspaces": [
     "packages/*"
   ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog",
+      "types": {
+        "feat": {
+          "description": "A new feature",
+          "title": "Feature"
+        },
+        "fix": {
+          "description": "A bug fix",
+          "title": "Bug Fix"
+        },
+        "docs": {
+          "description": "Documentation only changes",
+          "title": "Documentation"
+        },
+        "style": {
+          "description": "Changes that do not affect the meaning of the code (white-space, formatting, line-break, etc)",
+          "title": "Style"
+        },
+        "refactor": {
+          "description": "A code change that neither fixes a bug or adds a feature",
+          "title": "Code refactoring"
+        },
+        "perf": {
+          "description": "A code change that improves performance",
+          "title": "Performance Improvement"
+        },
+        "test": {
+          "description": "A code change that adds or modifies test code",
+          "title": "Test"
+        },
+        "chore": {
+          "description": "Changes that do not affect any code but changes project config such as package.json, gitlab-ci.yml, etc",
+          "title": "Chore"
+        },
+        "minor": {
+          "description": "A minor release",
+          "title": "Minor Release"
+        },
+        "major": {
+          "description": "A major release",
+          "title": "Major Release"
+        }
+      }
+    }
+  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "feat",
+          "fix",
+          "docs",
+          "style",
+          "refactor",
+          "perf",
+          "test",
+          "chore",
+          "minor",
+          "major"
+        ]
+      ]
+    }
   },
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
