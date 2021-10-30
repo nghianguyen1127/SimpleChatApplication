@@ -6,7 +6,7 @@
   "proxy": "http://localhost:8080/",
   "scripts": {
     "webpack": "webpack",
-    "build": "NPM_CONFIG_PRODUCTION=false webpack --mode production && move-file build ../api/build",
+    "build": "heroku config:set NPM_CONFIG_PRODUCTION=false && webpack --mode production && move-file build ../api/build",
     "start": "webpack serve"
   },
   "author": "Nghia (Tony)",
