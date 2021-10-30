@@ -9,6 +9,7 @@
     "start:api": "yarn workspace @shopping/api start",
     "start:ui": "yarn workspace @shopping/ui start",
     "start": "concurrently \"yarn start:api\" \"yarn start:ui\"",
+    "build": "lerna bootstrap && yarn workspace @shopping/ui build", 
     "purge": "shx rm -rf node_modules && lerna clean --yes"
   },
   "author": "Nghia (Tony)",
@@ -18,6 +19,7 @@
     "@commitlint/config-conventional": "^13.2.0",
     "eslint": "^8.1.0",
     "husky": "4",
+    "if-env": "^1.0.4",
     "lerna": "^4.0.0",
     "shx": "^0.3.3"
   },

@@ -6,6 +6,7 @@
   "proxy": "http://localhost:8080/",
   "scripts": {
     "webpack": "webpack",
+    "build": "webpack --mode production",
     "start": "webpack serve"
   },
   "author": "Nghia (Tony)",

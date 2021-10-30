@@ -14,6 +14,7 @@ const Routers = require("./routes");
 
 const app = express();
 
+
 // Env
 dotenv.config();
 
@@ -36,6 +37,12 @@ app.use(cors());
 app.use(express.json()); // or express.json()
 // app.use(expressValidator());
 app.use(Routers);
+
+app.use(express.static(path.join(__dirname, 'build'))); // here we serve all the statics
+
+app.get('/', (_, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 const PORT = process.env.PORT || 7777;
 var server = app.listen(PORT);

@@ -56,19 +56,19 @@ function Chat({ username, roomname, socket }) {
         </h2>
       </div>
       <div className="chat-message">
-        {messages.map((i) => {
-          if (i.username === username) {
+        {messages.map((item, index) => {
+          if (item.username === username) {
             return (
-              <div className="message">
-                <p>{i.text}</p>
-                <span>{i.username}</span>
+              <div className="message" key={index}>
+                <p>{item.text}</p>
+                <span>{item.username}</span>
               </div>
             );
           } else {
             return (
-              <div className="message mess-right">
-                <p>{i.text} </p>
-                <span>{i.username}</span>
+              <div className="message mess-right" key={index}>
+                <p>{item.text} </p>
+                <span>{item.username}</span>
               </div>
             );
           }
