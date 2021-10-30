@@ -9,7 +9,7 @@
     "start:api": "yarn workspace @shopping/api start",
     "start:ui": "yarn workspace @shopping/ui start",
     "start": "concurrently \"yarn start:api\" \"yarn start:ui\"",
-    "build": "yarn add --dev && yarn workspace @shopping/ui build", 
+    "build": "lerna bootstrap && yarn workspace @shopping/ui build", 
     "purge": "shx rm -rf node_modules && lerna clean --yes"
   },
   "author": "Nghia (Tony)",
