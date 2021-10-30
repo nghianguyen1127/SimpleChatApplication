@@ -24,6 +24,7 @@
     "image-webpack-loader": "^8.0.1",
     "move-file-cli": "^3.0.0",
     "path": "0.12.7",
+    "rimraf": "^3.0.2",
     "sass": "^1.43.4",
     "sass-loader": "^12.2.0",
     "style-loader": "^3.3.1",
