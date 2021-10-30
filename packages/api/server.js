@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const expressValidator = require("express-validator");
 var cors = require("cors");
 const socket = require("socket.io");
+const path = require("path");
+
 const {
   get_Current_User,
   user_Disconnect,
@@ -37,12 +39,12 @@ app.use(cors());
 app.use(express.json()); // or express.json()
 // app.use(expressValidator());
 app.use(Routers);
-
+console.log(111, path.join(__dirname, 'build'))
 app.use(express.static(path.join(__dirname, 'build'))); // here we serve all the statics
 
-app.get('/', (_, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+// app.get('/', (_, res) => {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 const PORT = process.env.PORT || 7777;
 var server = app.listen(PORT);

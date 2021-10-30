@@ -6,7 +6,7 @@
   "proxy": "http://localhost:8080/",
   "scripts": {
     "webpack": "webpack",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && move-file build ../api/build",
     "start": "webpack serve"
   },
   "author": "Nghia (Tony)",
@@ -22,6 +22,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "5.4.0",
     "image-webpack-loader": "^8.0.1",
+    "move-file-cli": "^3.0.0",
     "path": "0.12.7",
     "sass": "^1.43.4",
     "sass-loader": "^12.2.0",
