@@ -1,15 +1,4 @@
+@import '~antd/dist/antd.css';
+@import '~react-progress-2/main.css'; // Progress CSS Default
+@import '~react-toastify/dist/ReactToastify.css'; // Toast CSS Default
 @import "./assets/css/globals.scss";
-.App {
-  width: 100%;
-  height: 100vh;
-  background-color: $backgroundColor;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .right {
-    flex: 2;
-  }
-  .left {
-    flex: 1;
-  }
-}

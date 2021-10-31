@@ -4,6 +4,7 @@ import App from "./App";
 import rootReducers from "./redux/reducer";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+
 //here we create an object to store the current state of the application
 const store = createStore(rootReducers);
 

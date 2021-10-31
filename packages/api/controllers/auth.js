@@ -35,11 +35,11 @@ const signin = async (req, res) => {
 
 const signup = async (req, res) => {
   const { email, password, confirmPassword, firstName, lastName } = req.body;
-
   try {
     // 1. Check user existing
     const existingUser = await User.findOne({ email });
-    if (!existingUser)
+
+    if (existingUser)
       return res.status(404).json({ message: "User already exists." });
 
     // 2. Verify password
@@ -61,6 +61,7 @@ const signup = async (req, res) => {
     );
     res.status(200).json({ result, token });
   } catch (e) {
+    console.log(e);
     res.status(500).json({ message: "Something went wrong" });
   }
 };

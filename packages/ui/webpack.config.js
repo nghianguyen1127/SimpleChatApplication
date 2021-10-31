@@ -4,7 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
-  output: { path: path.join(__dirname, "build"), filename: "bundle.js", publicPath: '/' },
+  output: {
+    path: path.join(__dirname, "build"),
+    filename: "bundle.js",
+    publicPath: "/",
+  },
   mode: process.env.NODE_ENV || "development",
   resolve: {
     modules: [path.resolve(__dirname, "src"), "node_modules"],
@@ -41,6 +45,19 @@ module.exports = {
           "css-loader",
           // Compiles Sass to CSS
           "sass-loader",
+        ],
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+              },
+            },
+          },
         ],
       },
       {

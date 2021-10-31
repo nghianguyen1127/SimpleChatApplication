@@ -4,7 +4,8 @@
   "description": "Shopping APIs",
   "main": "server.js",
   "scripts": {
-    "build": "yarn rimraf build"
+    "build": "yarn rimraf build",
+    "start": "nodemon server.js"
   },
   "author": "Nghia (Tony)",
   "license": "ISC",
