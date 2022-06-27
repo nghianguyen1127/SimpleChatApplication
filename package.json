@@ -1,15 +1,15 @@
 {
   "private": true,
-  "name": "shopping",
+  "name": "chatapp",
   "version": "1.0.0",
-  "description": "Simple Shopping Application",
+  "description": "Simple Chat Application",
   "main": "index.js",
   "scripts": {
     "bootstrap": "yarn add -D lerna -W && lerna bootstrap",
-    "start:api": "yarn workspace @shopping/api start",
-    "start:ui": "yarn workspace @shopping/ui start",
+    "start:api": "yarn workspace @chatapp/api start",
+    "start:ui": "yarn workspace @chatapp/ui start",
     "start": "concurrently \"yarn start:api\" \"yarn start:ui\"",
-    "build": "lerna bootstrap && yarn workspace @shopping/api build && yarn workspace @shopping/ui build",
+    "build": "lerna bootstrap && yarn workspace @chatapp/api build && yarn workspace @chatapp/ui build",
     "purge": "shx rm -rf node_modules && lerna clean --yes"
   },
   "author": "Nghia (Tony)",

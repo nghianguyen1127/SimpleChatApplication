@@ -48,8 +48,8 @@ const App = () => {
             <Route path="/" exact>
               <Home socket={socket} />
             </Route>
-            {renderRoutes(compileRouters)}
             <Route path="/chat/:roomname/:username" component={Appmain} />
+            {renderRoutes(compileRouters)}
           </Switch>
         </div>
       </Router>

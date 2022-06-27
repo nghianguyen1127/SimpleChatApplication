@@ -1,4 +1,4 @@
-const SECRET_KEY = "SHOPPING_SECRET_KEY";
+const SECRET_KEY = "CHAT_APP_SECRET_KEY";
 
 module.exports = {
   SECRET_KEY,

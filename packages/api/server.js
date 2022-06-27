@@ -20,18 +20,18 @@ const app = express();
 dotenv.config();
 
 // Mongoose Connection
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true, // to eccept special character('@') in password
-  })
-  .then(() => {
-    console.log("MongoDB DB connection established successfully!");
-  });
+// mongoose
+//   .connect(process.env.MONGO_URI, {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true, // to eccept special character('@') in password
+//   })
+//   .then(() => {
+//     console.log("MongoDB DB connection established successfully!");
+//   });
 
-mongoose.connection.on("error", (err) => {
-  console.log("MongoDB DB connection error: " + err.message);
-});
+// mongoose.connection.on("error", (err) => {
+//   console.log("MongoDB DB connection error: " + err.message);
+// });
 
 // Middleware
 app.use(cors());

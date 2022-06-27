@@ -1,12 +1,12 @@
 {
-  "name": "@shopping/ui",
+  "name": "@chatapp/ui",
   "version": "1.0.0",
-  "description": "Shopping Layout",
+  "description": "Chat UI",
   "main": "index.js",
   "proxy": "http://localhost:8080/",
   "scripts": {
     "webpack": "webpack",
-    "build": "webpack --mode production && move-file build ../api/build",
+    "build": "webpack --mode development && move-file build ../api/build",
     "start": "webpack serve"
   },
   "author": "Nghia (Tony)",

@@ -1,7 +1,7 @@
 {
-  "name": "@shopping/api",
+  "name": "@chatapp/api",
   "version": "1.0.0",
-  "description": "Shopping APIs",
+  "description": "Chat APIs",
   "main": "server.js",
   "scripts": {
     "build": "yarn rimraf build",
